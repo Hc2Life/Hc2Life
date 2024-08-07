@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# coding: UTF-8
+
+import pandas as pd
+
+# 日付のDataFrameを作成します
+df = pd.DataFrame({'date': ['2020-01-01', '2020-01-02', '2020-01-03'],
+                   'row1': [1, 2, 3],
+                   'row2': [4, 5, 6],
+                   'row3': [7, 8, 9]})
+
+# date列とrow3列を抽出して新しいDataFrameを作成します
+new_df = df[['date', 'row3']]
+
+# 日付列をインデックスとして設定します
+new_df.set_index('date', inplace=True)
+
+# 新しいDataFrameを表示します
+print(new_df)
+
+print("sum =", new_df.row3.sum())
